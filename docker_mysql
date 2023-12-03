@@ -15,6 +15,21 @@ MYSQL_ROOT_PASSWORD=root_password \
     MYSQL_USER=my_user \
     MYSQL_PASSWORD=my_password
 
+#docker netwrod
+docker network create ladonetwork
+c9da767fdc7a   ladonetwork                      bridge    local
+
 docker run --name mysql_db -p 3308:3308 -e MYSQL_ROOT_PASSWORD=root_password -d mysql
+
+docker run \
+  --name=mysql-container \
+  --network=c9da767fdc7a\
+  -p 3309:3309 \
+  -e MYSQL_ROOT_PASSWORD=Pran##2 \
+  -e MYSQL_DATABASE=registrations \
+  -e MYSQL_USER=ladouser \
+  -e MYSQL_PASSWORD=Prana##2 \
+  -d mysql:latest
+
 
 
