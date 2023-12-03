@@ -1,3 +1,18 @@
 docker container ls
 
   docker exec -it my-mysql-container mysql -u root -p
+
+in my local
+Hostname=localhost
+username = root
+password p@02
+port 3306
+db registrations
+
+new 
+MYSQL_ROOT_PASSWORD=root_password \
+    MYSQL_DATABASE=student \
+    MYSQL_USER=my_user \
+    MYSQL_PASSWORD=my_password
+
+
