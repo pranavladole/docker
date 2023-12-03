@@ -15,4 +15,6 @@ MYSQL_ROOT_PASSWORD=root_password \
     MYSQL_USER=my_user \
     MYSQL_PASSWORD=my_password
 
+docker run --name mysql_db -p 3308:3308 -e MYSQL_ROOT_PASSWORD=root_password -d mysql
+
 
