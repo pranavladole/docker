@@ -31,5 +31,8 @@ docker run \
   -e MYSQL_PASSWORD=Prana##2 \
   -d mysql:latest
 
+docker rmi -f $(docker images -aq)
+to remove all images
+
 
 
