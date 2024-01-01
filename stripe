@@ -1,0 +1,31 @@
+
+    public void viastripe(){
+        Stripe.apiKey = "sk_test_";
+
+        // Use the test token for Amex card
+        String cardToken = "tok_amex";
+
+        // Charge amount in cents (e.g., $10.00 would be 1000)
+        int amount = 1000;
+        String currency = "usd";
+
+        // Create a map to represent the charge parameters
+        Map<String, Object> chargeParams = new HashMap<>();
+        chargeParams.put("amount", amount);
+        chargeParams.put("currency", currency);
+        chargeParams.put("source", cardToken); // Use the Amex test token
+        chargeParams.put("description", "Example charge");
+
+        try {
+            // Create the charge
+            Charge charge = Charge.create(chargeParams);
+
+            // Handle the charge response
+            System.out.println("Charge ID: " + charge.getId());
+            System.out.println("Status: " + charge.getStatus());
+        } catch (StripeException e) {
+            e.printStackTrace();
+        }
+
+
+    }
